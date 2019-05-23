@@ -1,0 +1,10 @@
+@import '../../colors.scss';
+
+.view {
+  .name {
+    flex-grow: 1;
+  }
+  .view-header {
+    background-color: $header-color;
+  }
+}

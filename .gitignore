@@ -1,0 +1,6 @@
+dist/script.js
+dist/style.css
+node_modules
+.vimrc
+.hidden
+**.swp

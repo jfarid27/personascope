@@ -1,0 +1,48 @@
+@import '../../colors.scss';
+
+.home {
+  .callout-text {
+    font-size: 3em;
+    display: block;
+    color: white;
+  }
+
+  .minor-text {
+    font-size: 1.8em;
+    display: block;
+    width: 60%;
+    color: white;
+  }
+  .header {
+    background: black;
+    padding: 30px;
+    height: 95%;
+    
+    .callout-text {
+      padding-top: 150px;
+    }
+
+    .action {
+      margin-top: 2em;
+      a {
+        text-decoration: none;
+      }
+      button {
+        width: 15em;
+        margin-right: 2em;
+        background-color: $app-primary-green;
+        color: white;
+      }
+    }
+  }
+
+  .app-details {
+    background-color: $app-primary-green;
+    height: 450px;
+    .callout-text {
+      padding-top: 10px;
+      font-weight: bold;
+    }
+
+  }
+}
