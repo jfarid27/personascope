@@ -74,16 +74,20 @@ function generateLinks(rowData) {
 
 class GraphVis {
   constructor(data, selector) {
-    this.svg = select(selector).append('svg')
+    this.selector = select(selector);
+    this.svg = this.selector.append('svg')
       .attr('height', 400)
       .attr('width', 800);
     this.project = data;
   }
 
+  clear() {
+    this.selector.selectAll('*').remove();
+  }
+
   async render() {
     const nodes = await generateNodes(this.project.data);
     const links = await generateLinks(this.project.data);
-    debugger
 
     const circs = this.svg.selectAll('circle').data(nodes)
       .enter()
@@ -127,7 +131,8 @@ export default function DemoProjectVis(props) {
   useEffect(() => {
     if (demoVisRef.current) {
       const g = new GraphVis(project, demoVisRef.current);
-      setTimeout(g.render(), 3000);
+      setTimeout(g.render(), 300);
+      return () => g.clear();
     }
   });
   return (
