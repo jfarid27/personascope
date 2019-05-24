@@ -21,7 +21,7 @@ const createProject = async (data, onLoad, onError) => {
   reader.onloadend = async () => {
     try {
       const parsed = csv.parse(reader.result, { header: true });
-      const project = await Project.create(parsed.data);
+      const project = await Project.create(parsed.data.slice(0, 400));
       parsed.saved = project.id;
       onLoad(parsed);
     } catch (error) {
