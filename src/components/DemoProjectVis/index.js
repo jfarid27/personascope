@@ -19,6 +19,7 @@ import {
 function generateNodes(rowData) {
   return new Promise(res => res(
     chain(rowData)
+      .filter(hasActionAndSession)
       .reduce((agg, row) => {
         set(agg, row.Action, true);
         return agg;
@@ -40,7 +41,7 @@ function groupBySessionId(agg, row) {
 
 function buildLinks(session) {
   const links = [];
-  for (let i = 2; i < session.length; i++) {
+  for (let i = 1; i < session.length; i++) {
     links.push({
       source: session[i - 1].Action,
       target: session[i].Action,
@@ -54,7 +55,9 @@ function idByLength(row, id) {
 }
 
 function hasActionAndSession(row) {
-  return get(row, 'Action') && get(row, 'SessionID');
+  const action = get(row, 'Action', false);
+  const session = get(row, 'SessionID', false);
+  return action && session && action !== '' && session !== '';
 }
 
 function generateLinks(rowData) {
@@ -80,6 +83,7 @@ class GraphVis {
   async render() {
     const nodes = await generateNodes(this.project.data);
     const links = await generateLinks(this.project.data);
+    debugger
 
     const circs = this.svg.selectAll('circle').data(nodes)
       .enter()
@@ -129,7 +133,7 @@ export default function DemoProjectVis(props) {
   return (
     <div className="demo-project-vis">
       <Grid container spacing={24}>
-        <Grid item xs={12} lg={4}>
+        <Grid item xs={12} lg={12}>
           <Card className="demo-project-card">
             <CardContent>
               <form>
