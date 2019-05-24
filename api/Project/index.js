@@ -5,7 +5,7 @@ const expectedFields = ['SessionId', 'Id', 'Date', 'Action'];
 const filterRequiredFields = data => _.map(data, row => _.pick(row, expectedFields));
 
 /**
- * Get request body and checks if each row has required fields.
+ * Get request body and checks if each data is less than a certain length.
  */
 const validateDemoProjectLength = (req, res, next) => {
   const data = _.get(req, 'body');
