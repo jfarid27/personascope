@@ -37,7 +37,6 @@ export default function DemoProjectVis(props) {
         <Grid item xs={12} lg={6}>
           <Card className="demo-project-card">
             <CardContent>
-              <h1>Details</h1>
               <TransitionGraphDetails
                 project={project}
                 nodes={nodes}
