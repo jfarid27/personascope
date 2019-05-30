@@ -80,8 +80,17 @@ function AppDetails() {
 }
 
 function TryIt() {
+  const tryText = "Personascope is in beta. Try a demo while we're building.";
   return (
-    <div className="try-details" />
+    <div className="try-details">
+      <Grid container spacing={24}>
+        <Grid item xs={12} lg={12}>
+          <h1 className="callout-text">Test Drive.</h1>
+          <p>{tryText}</p>
+          <LinkButton to="demo">Start Now</LinkButton>
+        </Grid>
+      </Grid>
+    </div>
   );
 }
 

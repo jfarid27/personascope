@@ -16,7 +16,7 @@
         text-decoration: none;
       }
       button {
-        width: 15em;
+        width: 25%;
         margin-right: 2em;
         background-color: $app-primary-green;
         color: white;
@@ -26,7 +26,6 @@
 
   .app-details {
     background-color: $app-primary-green;
-    height: 450px;
     padding: 30px;
     .callout-text {
       padding-top: 10px;
@@ -34,7 +33,18 @@
     }
     .demo-project-card {
       text-align: center;
-      height: 200px;
+      min-height: 200px;
+    }
+  }
+
+  .try-details {
+    padding: 30px;
+    text-align: center;
+    button {
+      width: 25%;
+      margin-right: 2em;
+      background-color: $app-primary-green;
+      color: white;
     }
   }
 }
