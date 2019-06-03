@@ -5,9 +5,9 @@
     font-size: 3em;
   }
   .header {
-    background: black;
+    background: white;
     padding: 30px;
-    color: white;
+    color: black;
     padding-top: 8%;
     padding-bottom: 8%;
     .action {
@@ -28,8 +28,12 @@
     background-color: $app-primary-green;
     padding: 30px;
     .callout-text {
+      color: white;
       padding-top: 10px;
       font-weight: bold;
+    }
+    .detail-text {
+      color: white;
     }
     .demo-project-card {
       text-align: center;

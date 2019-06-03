@@ -6,5 +6,10 @@
   }
   .view-header {
     background-color: $header-color;
+    .menu-button {
+      width: 5em;
+      margin-right: 2em;
+      color: white;
+    }
   }
 }

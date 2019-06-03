@@ -1,10 +1,11 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
+import React, { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
 import LinkButton from '../../components/LinkButton';
 import View from '../../components/View';
+import LeadSignUpModal from '../../components/LeadSignUpModal';
 import './index.scss';
 
 const minorText = `
@@ -21,14 +22,16 @@ const designText = `
 `;
 
 function LeadSplash() {
+  const [modalOpen, toggleModal] = useState(false);
   return (
     <div className="header">
       <h1 className="callout-text">Your users, magnified.</h1>
       <span className="minor-text">{minorText}</span>
       <div className="action">
         <LinkButton to="demo">Demo</LinkButton>
-        <Button color="inherit">Sign Up</Button>
+        <Button onClick={() => toggleModal(true)}>Sign Up</Button>
       </div>
+      <LeadSignUpModal open={modalOpen} handleClose={() => toggleModal(false)} />
     </div>
   );
 }
@@ -39,7 +42,7 @@ function AppDetails() {
       <Grid container spacing={24}>
         <Grid item xs={12} lg={12}>
           <h1 className="callout-text">Use event logs to drive application design.</h1>
-          <p>Personascope leverages your existing event logs to help drive application design.</p>
+          <p className="detail-text">Personascope leverages your existing event logs to help drive application design.</p>
         </Grid>
         <Grid item xs={12} md={4}>
           <Card className="demo-project-card">
