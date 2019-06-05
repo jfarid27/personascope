@@ -1,5 +1,6 @@
 import Home from './views/Home';
 import DemoProject from './views/DemoProject';
+import BetaSignUp from './views/SignUp';
 
 const Routes = {
   home: {
@@ -10,9 +11,9 @@ const Routes = {
     url: '/demo',
     component: DemoProject,
   },
-  demo: {
-    url: '/demo/:id',
-    component: DemoProject,
+  beta: {
+    url: '/beta',
+    component: BetaSignUp,
   },
 };
 
