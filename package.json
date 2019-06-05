@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "pm2-runtime start ecosystem.config.js --env production",
+    "test": "jasmine",
     "dev": "pm2 start",
     "stop": "pm2 stop all",
     "restart": "pm2 restart all",
@@ -50,10 +51,14 @@
     "webpack-cli": "3.3.0"
   },
   "devDependencies": {
+    "@babel/register": "7.4.4",
+    "babel": "6.23.0",
     "eslint": "5.15.3",
     "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-jasmine": "2.10.1",
     "eslint-plugin-jsx-a11y": "6.2.1",
-    "eslint-plugin-react": "7.12.4"
+    "eslint-plugin-react": "7.12.4",
+    "jasmine": "^3.4.0"
   }
 }
