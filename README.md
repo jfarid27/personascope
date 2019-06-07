@@ -1,5 +1,7 @@
 # Personascope
 
+[![Build Status](https://travis-ci.org/jfarid27/personascope.svg?branch=master)](https://travis-ci.org/jfarid27/personascope)
+
 This is the source code for Personascope, an app designed to identify
 personas and workflows in user app event logs.
 
