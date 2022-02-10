@@ -38,7 +38,7 @@
     "lodash": "4.17.11",
     "moment": "2.24.0",
     "mongodb": "3.2.5",
-    "node-sass": "4.12.0",
+    "node-sass": "7.0.0",
     "papaparse": "4.6.3",
     "pm2": "3.5.0",
     "prop-types": "15.7.2",
